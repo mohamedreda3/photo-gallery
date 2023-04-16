@@ -1,6 +1,11 @@
 .App {
   text-align: center;
-  background: white;
+}
+
+html, body{
+  background: none !important;
+  background-color: none !important;
+  background-image: none !important;
 }
 
 .App-logo {
@@ -15,7 +20,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -65,23 +70,22 @@
 
 .App p {
   padding: 0 15px 10px;
-  border-bottom: .5px solid #1f69ffdb;
+  border-bottom: 0.5px solid #1f69ffdb;
   width: fit-content;
   margin: auto;
   margin-bottom: 0;
 }
 
-.loader{
+.loader {
   width: 100%;
   position: fixed;
   height: 100%;
-  background-color: #282c34;
   top: 0;
   left: 0;
 }
 
-.loader::before{
-  content: '';
+.loader::before {
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -94,10 +98,57 @@
 }
 
 @keyframes spin {
-  0%{
+  0% {
     rotate: 0deg;
   }
-  100%{
+  100% {
     rotate: 90deg;
   }
+}
+
+nav {
+  box-shadow: -4px 10.4px 15px -5.6px #80808054;
+  padding: 20px 0;
+  position: sticky;
+  width: 100%;
+  z-index: 99;
+  background-color: white;
+  top: 0;
+}
+
+.slider img {
+  border-radius: 6px;
+  /* width: min(100%, 800px); */
+  height: 400px;
+}
+
+.slider {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  translate: -50%;
+  width: 100%;
+  height: 100%;
+  background: #000000c9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  z-index: 999;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.close svg {
+  display: block;
+  width: 50px;
+  height: 50px;
+  color: white;
+}
+
+.close{
+  margin-left: auto;
+  position: relative;
+  right: 30px;
+  cursor: pointer;
 }
