@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: white;
 }
 
 .App-logo {
@@ -34,5 +35,69 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.image-container {
+  padding: 10px;
+  width: min(100%, 880px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 3fr));
+  gap: 20px;
+  justify-items: center;
+  margin: auto;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.image-container img {
+  width: 270px;
+  transition: 0.7s ease-in-out;
+  box-shadow: -4px 10.4px 15px -5.6px #80808054;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.App h1 {
+  width: fit-content;
+  margin: 19px auto;
+}
+
+.App p {
+  padding: 0 15px 10px;
+  border-bottom: .5px solid #1f69ffdb;
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 0;
+}
+
+.loader{
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  background-color: #282c34;
+  top: 0;
+  left: 0;
+}
+
+.loader::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  border: 10px solid transparent;
+  border-radius: 50px;
+  border-bottom-color: white;
+  animation: spin 2px linear infinite;
+}
+
+@keyframes spin {
+  0%{
+    rotate: 0deg;
+  }
+  100%{
+    rotate: 90deg;
   }
 }

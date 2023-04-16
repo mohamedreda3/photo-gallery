@@ -7,12 +7,12 @@ let initialState = {
   error: null,
 };
 
-const getPhotoes = createAsyncThunk("photoes/getPhotoes", async () => {
+export const getPhotoes = createAsyncThunk("photoes/getPhotoes", async () => {
   try {
     const response = await axios.get("https://picsum.photos/v2/list");
-    return response;
+    return response.data; 
   } catch (err) {
-    return err;
+    return err; 
   }
 });
 
@@ -29,7 +29,7 @@ const photoSlice = createSlice({
     },
     [getPhotoes.rejected]: (state, action) => {
       state.status = "failed";
-      state.error = action.error.message;
+      state.error = action.error.message; // Set the error state to the error message
     },
   },
 });
